@@ -1,0 +1,93 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+$ColorBorder:hsla(0, 0%, 0%, 0.3);
+$colorBlue: rgba(56, 56, 236, 0.867);
+
+
+.captchaImg{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+    img{
+        width: 70%;
+        border: 1px $ColorBorder solid;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+
+.brd{
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    right: min(250px,20%);
+    .logo{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        img{
+            position: absolute;
+        }
+        .prt{
+            opacity: 0;
+        }
+        .prt1{
+            animation: pt1 3s 0s alternate infinite forwards;
+        }
+        .prt2{
+            animation: pt1 3s 0.5s alternate infinite forwards;
+        }
+        .prt3{
+            animation: pt1 3s 1s alternate infinite forwards;
+        }
+        .prt4{
+            animation: pt1 3s 1.5s alternate infinite forwards;
+        }
+        @keyframes pt1 {
+            20%{opacity: 0;}
+            35%{opacity: 100;}
+            70%{opacity: 100;}
+            85%{opacity: 0;}
+            
+        }
+    }
+    h1{
+        font-family: 'peydaRegular';
+        width: 270px;
+        text-align: center;
+        font-size: 13pt;
+        color: #fff;
+        background: $colorBlue;
+        padding: 6px;
+        border-radius: 8px;
+        margin: 10px;
+    }
+    a{
+        font-family: 'peydaRegular';
+        font-size: 13pt;
+        text-decoration: none;
+        color: $colorBlue;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+    .brd{
+        >img{
+            width: 150px;
+        }
+    }
+    
+}
